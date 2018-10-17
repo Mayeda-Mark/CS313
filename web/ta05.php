@@ -1,3 +1,6 @@
+<?php  
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +13,7 @@
 			Book: <input type="text" name="book" id="book">
 			<br>
 			<button type="submit" form="form">Submit</button>
+			<br>
 	<?php 
 		$book = $_POST['book'];
 		try {
@@ -32,11 +36,12 @@
 		}
 		foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
 				if ($row['book'] == $book) {				
-			echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " \"" . $row['content'] . "\"<br><br>";
+			echo "<strong>" $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a href=\"scripturedetails.php\" onclick=\"SESSION['id'] = $row['id']\"></a><br>";
 			}
 		}
 	?>
 		</form>
+		<a href=""></a>
 	</div>
 </body>
 </html>
