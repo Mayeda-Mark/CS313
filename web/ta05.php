@@ -5,7 +5,13 @@
 </head>
 <body>
 	<div>
+		<span>Search for a Book in our database.</span>
+		<form id="form" method="post" action="">
+			Book: <input type="text" name="book" id="book">
+			<br>
+			<button type="submit" form="form">Submit</button>
 	<?php 
+		$book = $_POST['book'];
 		try {
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -25,9 +31,12 @@
   			die();
 		}
 		foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
+				if ($row['book'] == $book) {				
 			echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " \"" . $row['content'] . "\"<br><br>";
+			}
 		}
 	?>
+		</form>
 	</div>
 </body>
 </html>
