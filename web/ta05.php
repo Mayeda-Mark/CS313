@@ -25,7 +25,7 @@
   			die();
 		}
 		foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
-			echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " \"" . $row['content'] . "\"<br>";
+			echo $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " \"" . $row['content'] . "\"<br><br>";
 		}
 	?>
 	</div>
