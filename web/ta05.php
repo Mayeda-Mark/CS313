@@ -36,7 +36,7 @@
 		}
 		foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
 				if ($row['book'] == $book) {				
-			echo "<strong>" $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a href=\"scripturedetails.php\" onclick=\"SESSION['id'] = $row['id']\"></a><br>";
+			echo "<strong>" $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a href='scripturedetails.php'></a><br>";
 			}
 		}
 	?>
