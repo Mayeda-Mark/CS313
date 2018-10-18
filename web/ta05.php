@@ -34,7 +34,7 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		foreach ($db->query("SELECT book, chapter, verse FROM Scriptures WHERE ('book' == '".$book."')") as $row) {			
+		foreach ($db->query("SELECT book, chapter, verse FROM Scriptures WHERE ('book' = '".$book."')") as $row) {			
 			echo "<strong>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a";
 		}
 	?>
