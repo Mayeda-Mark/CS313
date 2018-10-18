@@ -34,16 +34,15 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		$query = "SELECT book, chapter, verse FROM Scriptures WHERE book = '" . $book . "'";
+		$query = "SELECT book, chapter, verse FROM Scriptures WHERE book = '" . $book . "';";
 		foreach ($db->query($query) as $row) {			
 			echo "<strong>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a";
 		}
-		foreach ($db->query('SELECT book, chapter, verse FROM Scriptures WHERE book = John') as $something) {
+		/*foreach ($db->query('SELECT book, chapter, verse FROM Scriptures WHERE book = John') as $something) {
 			echo "<strong>" . $something['book'] . " " . $something['chapter'] . ":" . $something['verse'] . "</strong>";
-		}
+		}*/
 	?>
 		</form>
-		<a href=""></a>
 	</div>
 </body>
 </html>
