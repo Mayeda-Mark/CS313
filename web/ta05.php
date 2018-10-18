@@ -34,10 +34,8 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
-				if ($row['book'] == $book) {				
-			echo "<strong>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a href='scripturedetails.php' onclick=\"SESSION['id'] = $row['id']\"></a><br>";
-			}
+		foreach ($db->query("SELECT book, chapter, verse FROM Scriptures WHERE ('book' == ".$book.")") as $row) {			
+			echo "<strong>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</strong><a";
 		}
 	?>
 		</form>
