@@ -73,7 +73,7 @@
 			$teamID = $team['id'];
 		}
 		$query2 = "SELECT * FROM Analysis WHERE Team_id = '" . $teamID . "';";
-		foreach ($db->query($query) as $row) {			
+		foreach ($db->query($query2) as $row) {			
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
 		}
 	?>
