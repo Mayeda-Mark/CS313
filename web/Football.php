@@ -9,8 +9,8 @@
 		<br>
 		<span>Select an NFL Team</span>
 		<br>
-		<form id="Team" name="Team" method="post" action="Football.php">
-			<select>
+		<form id="Team"  method="post" action="Football.php">
+			<select name="Team">
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
 				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
