@@ -76,7 +76,7 @@
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . ";";
 		foreach ($db->query($query2) as $row) {	
 			echo $teamID;
-			echo $row['analysis.week_id'] .  " " . $row['score.teamscore'] . " " . $row['score.oppscore'] . " " . $row['score.iswin'] . " " . $row['spread.proj_spread'] . " " . $row['score.realspread'] . $row['analysis.spreaddifference'];
+			echo $row['Analysis.week_id'] .  " " . $row['Score.teamscore'] . " " . $row['Score.oppscore'] . " " . $row['Score.iswin'] . " " . $row['Spread.proj_spread'] . " " . $row['Score.realspread'] . $row['Analysis.spreaddifference'];
 	}
 }
 	?>
