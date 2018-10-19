@@ -77,7 +77,7 @@
 		foreach ($db->query($query2) as $row) {	
 //			if ($row['Team_id'] == $teamID) {
 			echo "something";		
-			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
+			echo $row['week_id'] .  " " . $row['spread_id'] . " " . $row['score_id'] . " " . $row['spreaddifference'];
 		//}
 	}
 }
