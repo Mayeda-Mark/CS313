@@ -51,7 +51,6 @@
 	<?php 
 		$teamName = $_POST['Team'];
 		if (isset($_POST['Team'])) {
-		echo $teamName;
 		try {
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -73,14 +72,12 @@
 		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
-			echo $team['id'];
-			echo $teamID;
 		}
 		$query2 = "SELECT Team_id, Spread_id, Score_id, spreadDifference FROM Analysis;";
 		foreach ($db->query($query2) as $row) {	
-			if ($row['Team_id'] == $teamID) {		
+//			if ($row['Team_id'] == $teamID) {		
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
-		}
+		//}
 	}
 }
 	?>
