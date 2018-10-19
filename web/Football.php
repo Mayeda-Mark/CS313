@@ -71,6 +71,8 @@
 		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
+			echo $team['id'];
+			echo $teamID;
 		}
 		$query2 = "SELECT Team_id, Spread_id, Score_id, spreadDifference FROM Analysis;";
 		foreach ($db->query($query2) as $row) {	
