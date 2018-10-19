@@ -68,11 +68,11 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		$query1 = "SELECT * FROM Team WHERE Name = '" . $teamName . "';";
+		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
 		}
-		$query2 = "SELECT * FROM Analysis WHERE Team_id = '" . $teamID . "';";
+		$query2 = "SELECT Team_id, Spread_id, Score_id, spreadDifference FROM Analysis WHERE Team_id = '" . $teamID . "';";
 		foreach ($db->query($query2) as $row) {			
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
 		}
