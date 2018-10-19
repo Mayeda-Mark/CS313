@@ -9,7 +9,7 @@
 		<br>
 		<span>Select an NFL Team</span>
 		<br>
-		<form id="Team" name="Team" method="post" action="">
+		<form id="Team" name="Team" method="post" action="Football.php">
 			<select>
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
@@ -50,6 +50,8 @@
 		<br>
 	<?php 
 		$teamName = $_POST['Team'];
+		if (isset($_POST['Team'])) {
+		
 		try {
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -80,6 +82,7 @@
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
 		}
 	}
+}
 	?>
 
 	</div>
