@@ -72,10 +72,12 @@
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
 		}
-		$query2 = "SELECT Team_id, Spread_id, Score_id, spreadDifference FROM Analysis WHERE Team_id = '" . $teamID . "';";
-		foreach ($db->query($query2) as $row) {			
+		$query2 = 'SELECT Team_id, Spread_id, Score_id, spreadDifference FROM Analysis';
+		foreach ($db->query($query2) as $row) {	
+			if ($row['Team_id'] == $teamID) {		
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
 		}
+	}
 	?>
 
 	</div>
