@@ -75,7 +75,8 @@
 		}
 		$query2 = "SELECT Team_id, Week_id, Spread_id, Score_id, spreadDifference FROM Analysis;";
 		foreach ($db->query($query2) as $row) {	
-//			if ($row['Team_id'] == $teamID) {		
+//			if ($row['Team_id'] == $teamID) {
+			echo "something";		
 			echo $row['Week_id'] .  " " . $row['Spread_id'] . " " . $row['Score_id'] . " " . $row['spreadDifference'];
 		//}
 	}
