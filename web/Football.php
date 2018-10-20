@@ -57,6 +57,7 @@
 		$totalWins = 0;
 		$totalDifference = 0;
 		$weeks = 0;
+		$totalLosses = 0;
 
 		//Set up table
 		if ($teamName != "") {
@@ -113,6 +114,7 @@
 				}
 			else {
 				echo "L</td><td>"; 
+				$totalLosses++;
 			}
 			//Projected Spread
 			echo $row['proj_spread'] . "</td><td>";
@@ -124,7 +126,7 @@
 			$weeks++;
 	}
 	echo "</table>";
-	echo "<p id=extras style=\"text-align:left\">Win/Loss Record:" . $totalWins . "/" . $weeks - $totalWins . "<br></p>";
+	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses . "<br></p>";
 }
 	?>
 	</div>
