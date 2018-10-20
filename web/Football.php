@@ -11,7 +11,7 @@
 		<br>
 		<form id="Team"  method="post" action="Football.php">
 			<select name="Team">
-				<!--<option value="" selected>-Select-</option> -->
+				<!--<option value="" disabled selected>-Select-</option> -->
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
 				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
@@ -73,7 +73,7 @@
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
 		$teamName = $_POST['Team'];
-		echo $teamName . "<br><table style='border: 1px solid black';><tr>";
+		echo $teamName . "<br><table><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
@@ -84,7 +84,7 @@
 		}
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . ";";
 		foreach ($db->query($query2) as $row) {	
-			echo $teamID;
+//			echo $teamID;
 			echo "<tr><td>" . $row['week_id'] .  "</td><td>"; 
 			echo $row['teamscore'] . "</td><td>"; 
 			echo $row['oppscore'] . "</td><td>"; 
