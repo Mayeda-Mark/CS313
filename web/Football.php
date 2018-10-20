@@ -52,7 +52,13 @@
 		<br>
 	<div id="results" style="text-align: center">
 	<?php 
+		//Set Variables
 		$teamName = $_POST['Team'];
+		$totalWins = 0;
+		$totalDifference = 0;
+		$weeks = 0;
+
+		//Set up table
 		if ($teamName != "") {
 		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
@@ -62,6 +68,8 @@
 		echo "<th>Projected Spread</th>";
 		echo "<th>Actual Spread</th>";
 		echo "<th>Spread Difference</th></tr>";
+
+		//Access DB
 		try {
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
@@ -80,21 +88,43 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
+
+		//Get team id
 		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
 		}
+
+		//Get table
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . ";";
+
+		//Fill table
 		foreach ($db->query($query2) as $row) {	
-			echo "<tr><td><style= 'text-align:center'>" . $row['week_id'] .  "</td><td><style= 'text-align:center'>"; 
-			echo $row['teamscore'] . "</td><td><style= 'text-align:center'>"; 
-			echo $row['oppscore'] . "</td><td><style= 'text-align:center'>"; 
-			echo $row['iswin'] . "</td><td><style= 'text-align:center'>"; 
-			echo $row['proj_spread'] . "</td><td><style= 'text-align:center'>";
-			echo $row['realspread'] . "</td><td><style= 'text-align:center'>";
+			//Week
+			echo "<tr><td><style= 'text-align:center'>" . $row['week_id'] .  "</td><td>"; 
+			//Team Score
+			echo $row['teamscore'] . "</td><td>"; 
+			//Oponent score
+			echo $row['oppscore'] . "</td><td>"; 
+			//Win/Loss
+			if ($row['iswin']) {
+				echo "W</td><td>"; 
+				$totalWins++;
+				}
+			else {
+				echo "L</td><td>"; 
+			}
+			//Projected Spread
+			echo $row['proj_spread'] . "</td><td>";
+			//Actual Spread
+			echo $row['realspread'] . "</td><td>";
+			//Spread Difference
 			echo $row['spreaddifference'] . "</td></tr>";
+			//Inciment Weeks
+			$weeks++;
 	}
 	echo "</table>";
+	echo "<p id=extras style=\"text-align:left\">Win/Loss Record:" . $totalWins . "/" . $weeks - $totalWins . "<br>";
 }
 	?>
 	</div>
