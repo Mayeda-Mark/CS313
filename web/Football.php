@@ -133,7 +133,7 @@
 	}
 	echo "</table>";
 	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses . "<br>";
-	echo "Average spread difference: " . $totalDifference / $weeks . "</p>;
+	echo "Average spread difference: " . $totalDifference / $weeks . "</p>";
 }
 	?>
 	</div>
