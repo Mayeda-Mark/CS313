@@ -11,7 +11,7 @@
 		<br>
 		<form id="Team"  method="post" action="Football.php">
 			<select name="Team">
-				<option value="" disabled selected>-Select-</option>
+				<option value="select" disabled selected>-Select-</option>
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
 				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
@@ -50,8 +50,9 @@
 		</form>
 		<br>
 	<?php 
+		if (isset($_POST['Team'])) {
 		$teamName = $_POST['Team'];
-		echo $teamName . "<br><table><tr>";
+		echo $teamName . "<br><table style=\"border: 1px solid black\";><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
@@ -59,7 +60,6 @@
 		echo "<th>Projected Spread</th>";
 		echo "<th>Actual Spread</th>";
 		echo "<th>Spread Difference</th></tr>";
-		if (isset($_POST['Team'])) {
 		try {
 			$dbUrl = getenv('DATABASE_URL');
 			$dbOpts = parse_url($dbUrl);
