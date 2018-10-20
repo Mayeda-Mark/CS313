@@ -84,12 +84,12 @@
 		}
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . ";";
 		foreach ($db->query($query2) as $row) {	
-			echo "<tr><td>" . $row['week_id'] .  "</td><td>"; 
-			echo $row['teamscore'] . "</td><td>"; 
-			echo $row['oppscore'] . "</td><td>"; 
-			echo $row['iswin'] . "</td><td>"; 
-			echo $row['proj_spread'] . "</td><td>";
-			echo $row['realspread'] . "</td><td>";
+			echo "<tr><td><style= 'text-align:center'>" . $row['week_id'] .  "</td><td><style= 'text-align:center'>"; 
+			echo $row['teamscore'] . "</td><td><style= 'text-align:center'>"; 
+			echo $row['oppscore'] . "</td><td><style= 'text-align:center'>"; 
+			echo $row['iswin'] . "</td><td><style= 'text-align:center'>"; 
+			echo $row['proj_spread'] . "</td><td><style= 'text-align:center'>";
+			echo $row['realspread'] . "</td><td><style= 'text-align:center'>";
 			echo $row['spreaddifference'] . "</td></tr>";
 	}
 	echo "</table>";
