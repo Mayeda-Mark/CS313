@@ -119,14 +119,21 @@
 			//Projected Spread
 			echo $row['proj_spread'] . "</td><td>";
 			//Actual Spread
-			echo $row['realspread'] . "</td><td>";
+			echo $row['realspread'] . "</td>";
 			//Spread Difference
-			echo $row['spreaddifference'] . "</td></tr>";
+			if ($row['spreaddifference'] >= 0) {
+			echo "<td>" . $row['spreaddifference'] . "</td></tr>";
+			}
+			else {
+			echo "<td style='color:red;'>" . $row['spreaddifference'] . "</td></tr>";	
+			}
 			//Inciment Weeks
+			$totalDifference += $row['spreaddifference'];
 			$weeks++;
 	}
 	echo "</table>";
-	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses . "<br></p>";
+	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses . "<br>";
+	echo "Average spread difference: " . $totalDifference / $weeks . "</p>;
 }
 	?>
 	</div>
