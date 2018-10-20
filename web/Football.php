@@ -50,8 +50,8 @@
 		</form>
 		<br>
 	<?php 
-		if (isset($_POST['Team'])) {
 		$teamName = $_POST['Team'];
+		if ($teamName =! "select") {
 		echo $teamName . "<br><table style=\"border: 1px solid black\";><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
