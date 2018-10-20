@@ -52,7 +52,7 @@
 	<?php 
 		$teamName = $_POST['Team'];
 		if ($teamName != "") {
-		echo $teamName . "<br><table border: \"1\"><tr>";
+		echo $teamName . "<br><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
