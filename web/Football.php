@@ -5,7 +5,8 @@
 </head>
 <body>
 	<div>
-		<span>I'll put an expplanation here.</span>
+		<span>This web appllication is designed to analyze the performance of NFL football teams.  This is accomplished by not only taking a look at a team's win/loss record, but also looking at the difference between a team's projected point spread and actual point spread for a given game.  A projected point spread is the number of points that the sports analysts in Las Vegas expect a team to win or lose by.  If a point spread is negative, the team is expected to win by that many points and visa-versa for a positive spread.  By comparing what the actual point spread of a game with the projected point spread of a game over time, we can determine if a team is generally overperforming or underperforming.</span>
+		<br>
 		<br>
 		<span>Select an NFL Team</span>
 		<br>
