@@ -59,6 +59,7 @@
 		$totalDifference = 0;
 		$weeks = 0;
 		$totalLosses = 0;
+		$totalDraws = 0;
 
 		//Set up table
 		if ($teamName != "") {
@@ -113,6 +114,10 @@
 				echo "<td>W</td><td>"; 
 				$totalWins++;
 				}
+			elseif ($row['teamscore'] == $row["oppscore"]) {
+				echo "<td>D</td><td>";
+				$totalDraws++;
+			}
 			else {
 				echo "<td style='color:red;'>L</td><td>"; 
 				$totalLosses++;
@@ -133,8 +138,11 @@
 			$weeks++;
 	}
 	echo "</table>";
-	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses . "<br>";
-	echo "Average spread difference: " . $totalDifference / $weeks . "</p>";
+	echo "<p style=\"text-align:left\">Win/Loss Record: " . $totalWins . "/" . $totalLosses;
+	if ($totalDraws) {
+		echo "/" . $totalDraws;
+	}
+	echo "<br>Average spread difference: " . $totalDifference / $weeks . "</p>";
 }
 	?>
 	</div>
