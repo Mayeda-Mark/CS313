@@ -124,7 +124,7 @@
 			$weeks++;
 	}
 	echo "</table>";
-	echo "<p id=extras style=\"text-align:left\">Win/Loss Record:" . $totalWins . "/" . $weeks - $totalWins . "<br>";
+	echo "<p id=extras style=\"text-align:left\">Win/Loss Record:" . $totalWins . "/" . $weeks - $totalWins . "<br></p>";
 }
 	?>
 	</div>
