@@ -106,14 +106,14 @@
 			//Team Score
 			echo $row['teamscore'] . "</td><td>"; 
 			//Oponent score
-			echo $row['oppscore'] . "</td><td>"; 
+			echo $row['oppscore'] . "</td>"; 
 			//Win/Loss
 			if ($row['iswin']) {
-				echo "W</td><td>"; 
+				echo "<td>W</td><td>"; 
 				$totalWins++;
 				}
 			else {
-				echo "L</td><td>"; 
+				echo "<td style='color:red;'>L</td><td>"; 
 				$totalLosses++;
 			}
 			//Projected Spread
