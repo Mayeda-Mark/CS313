@@ -73,7 +73,7 @@
 		foreach ($db->query($query1) as $team) {
 			$teamID = $team['id'];
 		$teamName = $_POST['Team'];
-		echo $teamName . "<br><table style=\"border: 1px solid black\";><tr>";
+		echo $teamName . "<br><table style='border: 1px solid black';><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
