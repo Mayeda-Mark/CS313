@@ -121,11 +121,11 @@
 			//Actual Spread
 			echo $row['realspread'] . "</td>";
 			//Spread Difference
-			if ($row['spreaddifference'] >= 0) {
-			echo "<td>" . $row['spreaddifference'] . "</td></tr>";
+			if ($row['spreaddifference'] < 0) {
+			echo "<td style='color:red;'>" . $row['spreaddifference'] . "</td></tr>";
 			}
 			else {
-			echo "<td style='color:red;'>" . $row['spreaddifference'] . "</td></tr>";	
+			echo "<td>" . $row['spreaddifference'] . "</td></tr>";	
 			}
 			//Inciment Weeks
 			$totalDifference += $row['spreaddifference'];
