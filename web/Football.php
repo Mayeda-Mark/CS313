@@ -51,14 +51,14 @@
 		<br>
 	<?php 
 		$teamName = $_POST['Team'];
-		echo $teamName . "<table><tr>
-		<th>Week</th>
-		<th>Score</th>
-		<th>Opponent Score</th>
-		<th>W/L</th>
-		<th>Projected Spread</th>
-		<th>Actual Spread</th>
-		<th>Spread Difference</th></tr>";
+		echo $teamName . "<br><table><tr>";
+		echo "<th>Week</th>";
+		echo "<th>Score</th>";
+		echo "<th>Opponent Score</th>";
+		echo "<th>W/L</th>";
+		echo "<th>Projected Spread</th>";
+		echo "<th>Actual Spread</th>";
+		echo "<th>Spread Difference</th></tr>";
 		if (isset($_POST['Team'])) {
 		try {
 			$dbUrl = getenv('DATABASE_URL');
@@ -85,8 +85,15 @@
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . ";";
 		foreach ($db->query($query2) as $row) {	
 			echo $teamID;
-			echo "<tr><td>" $row['week_id'] .  "</td><td>" . $row['teamscore'] . "</td><td>" . $row['oppscore'] . "</td><td>" . $row['iswin'] . "</td><td>" . $row['proj_spread'] . "</td><td>" . $row['realspread'] . "</td><td>" . $row['spreaddifference'] . "</td></tr>";
+			echo "<tr><td>" $row['week_id'] .  "</td><td>"; 
+			echo $row['teamscore'] . "</td><td>"; 
+			echo $row['oppscore'] . "</td><td>"; 
+			echo $row['iswin'] . "</td><td>"; 
+			echo $row['proj_spread'] . "</td><td>";
+			echo $row['realspread'] . "</td><td>";
+			echo $row['spreaddifference'] . "</td></tr>";
 	}
+	echo "</table>";
 }
 	?>
 	</div>
