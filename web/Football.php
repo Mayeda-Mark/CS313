@@ -54,7 +54,7 @@
 	<?php 
 		$teamName = $_POST['Team'];
 		if ($teamName != "") {
-		echo "<span style='text-align: left'>" . $teamName . "</span><table border=\"1\"><tr>";
+		echo "<span style=\"text-align: left\">" . $teamName . "</span><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
