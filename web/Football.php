@@ -48,11 +48,13 @@
 			<br>
 			<button type="submit" form="Team">Submit</button>
 		</form>
+	</div>
 		<br>
+	<div id="results" style="text-align: center">
 	<?php 
 		$teamName = $_POST['Team'];
 		if ($teamName != "") {
-		echo $teamName . "<br><table border=\"1\"><tr>";
+		echo "<style='text-align: left'" . $teamName . "<br><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
