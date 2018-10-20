@@ -51,7 +51,7 @@
 		<br>
 	<?php 
 		$teamName = $_POST['Team'];
-		if ($teamName =! "select") {
+		if ($teamName != "") {
 		echo $teamName . "<br><table style=\"border: 1px solid black\";><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
