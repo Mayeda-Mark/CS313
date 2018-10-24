@@ -54,6 +54,7 @@
 	<div id="results1" style="text-align: center">
 	<?php 
 		//Set Variables
+		$iswin = false;
 		$teamName = $_POST['Team1'];
 		$teamName2 = $_POST['Team2'];
 		$weekNumber = $_POST['weekNumber'];
@@ -91,8 +92,21 @@
 
 
 		if ($teamName2 != "" && $weekNumber != "" && $score != "" && $opponentScore != "" && $projectedSpread != "" && $actualSpread != "") {
-			
+			//Get team id
+		$query3 = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
+		foreach ($db->query($query3) as $team) {
+
+			$teamID = $team['id'];
 		}
+		if ($score > $opponentScore) {
+			$iswin = true;
+		}
+		$query4 = "INSERT INTO Spread (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
+		VALUES (" . $teamID . " ," .$weekNumber . " ," . $score . " ," . $opponentScore . " ," . $actualSpread . " ," . $iswin . ");"; 
+		}
+
+INSERT INTO Score (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
+VALUES (13, 1, 21, 21, 0, false);
 
 		else {
 
