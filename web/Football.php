@@ -11,7 +11,7 @@
 		<span>Select an NFL Team</span>
 		<br>
 		<form id="Team"  method="post" action="Football.php">
-			<select name="Team">
+			<select name="Team1">
 				<option value=""  selected>-Select-</option>
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
@@ -51,10 +51,10 @@
 		</form>
 	</div>
 		<br>
-	<div id="results" style="text-align: center">
+	<div id="results1" style="text-align: center">
 	<?php 
 		//Set Variables
-		$teamName = $_POST['Team'];
+		$teamName = $_POST['Team1'];
 		$totalWins = 0;
 		$totalDifference = 0;
 		$weeks = 0;
@@ -145,6 +145,75 @@
 	echo "<br>Average spread difference: " . $totalDifference / $weeks . "</p>";
 }
 	?>
+	</div>
+	<div>
+		<span>Add or Edit Game Information</span>
+	<form id="edit"  method="post" action="Football.php">
+			<select name="Team2">
+				<option value=""  selected>-Select-</option>
+				<option value="New England Patriots">New England Patriots</option>
+				<option value="Dallas Cowboys">Dallas Cowboys</option>
+				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
+				<option value="Pittsburgh Steelers">Pittsburgh Steelers</option>
+				<option value="Green Bay Packers">Green Bay Packers</option>
+				<option value="New York Giants">New York Giants</option>
+				<option value="Seattle Seahawks">Seattle Seahawks</option>
+				<option value="Oakland Raiders">Oakland Raiders</option>
+				<option value="Chicago Bears">Chicage Bears</option>
+				<option value="Minnesota Vikings">Minnesota Vikings</option>
+				<option value="Kansas City Chiefs">Kansas City Chiefs</option>
+				<option value="San Francisco 49ers">San Francisco 49ers</option>
+				<option value="Cleveland Browns">Cleveland Browns</option>
+				<option value="Denver Broncos">Denver Broncos</option>
+				<option value="Los Angeles Rams">Los Angeles Rams</option>
+				<option value="Miami Dolphins">Miami Dolphins</option>
+				<option value="Washington Redskins">Washington Redskins</option>
+				<option value="Cincinnati Bengals">Cincinnati Bengals</option>
+				<option value="Baltimore Ravens">Baltimore Ravens</option>
+				<option value="New York Jets">New York Jets</option>
+				<option value="Carolina Panthers">Carolina Panthers</option>
+				<option value="Buffalo Bills">Buffalo Bills</option>
+				<option value="Arizona Cardinals">Arizona Cardinals</option>
+				<option value="New Orleans Saints">New Orleans Saints</option>
+				<option value="Atlanta Falcons">Atlanta Falcons</option>
+				<option value="Los Angeles Chargers">Los Angeles Chargers</option>
+				<option value="Houston Texans">Houston Texans</option>
+				<option value="Detroit Lions">Detroit Lions</option>
+				<option value="Jaksonville Jaguars">Jacksonville Jaguars</option>
+				<option value="Indianapolis Colts"></option>
+				<option value="Tennesse Titans">Tennesse Titans</option>
+				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option>
+			</select>
+			<select>
+				<option value="" selected>-Select-</option>
+				<option value="1">Week 1</option>
+				<option value="2">Week 2</option>
+				<option value="3">Week 3</option>
+				<option value="4">Week 4</option>
+				<option value="5">Week 5</option>
+				<option value="6">Week 6</option>
+				<option value="7">Week 7</option>
+				<option value="8">Week 8</option>
+				<option value="9">Week 9</option>
+				<option value="10">Week 10</option>
+				<option value="11">Week 11</option>
+				<option value="12">Week 12</option>
+				<option value="13">Week 13</option>
+				<option value="14">Week 14</option>
+				<option value="15">Week 15</option>
+				<option value="16">Week 16</option>
+			</select>
+			<br>
+			Score: <input type="text" name="score">
+			Opponent Score: <input type="text" name="opponentScore">
+			<br>
+			<br>
+			Projected Spread: <input type="text" name="projectedSpread">
+			Actual Spread: <input type="text" name="actualSpread">
+			<br>
+			<br>
+			<button type="submit" form="edit">Submit</button>
+		</form>
 	</div>
 </body>
 </html>
