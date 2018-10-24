@@ -149,7 +149,7 @@
 	<div>
 		<span>Add or Edit Game Information</span>
 	<form id="edit"  method="post" action="Football.php">
-			<select name="Team2">
+			Team: <select name="Team2">
 				<option value=""  selected>-Select-</option>
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
@@ -184,7 +184,7 @@
 				<option value="Tennesse Titans">Tennesse Titans</option>
 				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option>
 			</select>
-			<select>
+			Week Number: <select>
 				<option value="" selected>-Select-</option>
 				<option value="1">Week 1</option>
 				<option value="2">Week 2</option>
@@ -204,13 +204,11 @@
 				<option value="16">Week 16</option>
 			</select>
 			<br>
-			Score: <input type="text" name="score">
-			Opponent Score: <input type="text" name="opponentScore">
+			Score: <input type="text" name="score" size="4">
+			Opponent Score: <input type="text" name="opponentScore" size="4">
 			<br>
-			<br>
-			Projected Spread: <input type="text" name="projectedSpread">
-			Actual Spread: <input type="text" name="actualSpread">
-			<br>
+			Projected Spread: <input type="text" name="projectedSpread" size="4">
+			Actual Spread: <input type="text" name="actualSpread" size="4">
 			<br>
 			<button type="submit" form="edit">Submit</button>
 		</form>
