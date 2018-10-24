@@ -55,22 +55,19 @@
 	<?php 
 		//Set Variables
 		$teamName = $_POST['Team1'];
+		$teamName2 = $_POST['Team2'];
+		$weekNumber = $_POST['weekNumber'];
+		$score = $_POST['score'];
+		$opponentScore = $_POST['opponentScore'];
+		$projectedSpread = $_POST['projectedSpread'];
+		$actualSpread = $_POST['actualSpread'];
 		$totalWins = 0;
 		$totalDifference = 0;
 		$weeks = 0;
 		$totalLosses = 0;
 		$totalDraws = 0;
 
-		//Set up table
-		if ($teamName != "") {
-		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
-		echo "<th>Week</th>";
-		echo "<th>Score</th>";
-		echo "<th>Opponent Score</th>";
-		echo "<th>W/L</th>";
-		echo "<th>Projected Spread</th>";
-		echo "<th>Actual Spread</th>";
-		echo "<th>Spread Difference</th></tr>";
+			//Table goes here if error
 
 		//Access DB
 		try {
@@ -91,6 +88,24 @@
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
+
+
+		if ($teamName2 != "" && $weekNumber != "" && $score != "" && $opponentScore != "" && $projectedSpread != "" && $actualSpread != "") {
+			
+		}
+
+		else {
+
+		//Set up table
+		if ($teamName != "") {
+		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
+		echo "<th>Week</th>";
+		echo "<th>Score</th>";
+		echo "<th>Opponent Score</th>";
+		echo "<th>W/L</th>";
+		echo "<th>Projected Spread</th>";
+		echo "<th>Actual Spread</th>";
+		echo "<th>Spread Difference</th></tr>";
 
 		//Get team id
 		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
@@ -144,6 +159,9 @@
 	}
 	echo "<br>Average spread difference: " . $totalDifference / $weeks . "</p>";
 }
+}
+
+
 	?>
 	</div>
 	<div>
@@ -184,7 +202,7 @@
 				<option value="Tennesse Titans">Tennesse Titans</option>
 				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option>
 			</select>
-			Week Number: <select>
+			Week Number: <select name="weekNumber">
 				<option value="" selected>-Select-</option>
 				<option value="1">Week 1</option>
 				<option value="2">Week 2</option>
@@ -206,7 +224,6 @@
 			<br>
 			Score: <input type="text" name="score" size="4">
 			Opponent Score: <input type="text" name="opponentScore" size="4">
-			<br>
 			Projected Spread: <input type="text" name="projectedSpread" size="4">
 			Actual Spread: <input type="text" name="actualSpread" size="4">
 			<br>
