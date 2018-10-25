@@ -1,7 +1,7 @@
 <?php  
 require("dbConnect.php");
 require("getData.php");
-$db = get_db();
+//$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
