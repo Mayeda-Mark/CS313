@@ -1,3 +1,8 @@
+<?php  
+require("dbConnect.php");
+require("getData.php");
+$db = get_db();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +58,9 @@
 		<br>
 	<div id="results1" style="text-align: center">
 	<?php 
+
+	getData();
+	/*
 		//Set Variables
 		$iswin = false;
 		$teamName = $_POST['Team1'];
@@ -70,25 +78,7 @@
 
 			//Table goes here if error
 
-		//Access DB
-		try {
-			$dbUrl = getenv('DATABASE_URL');
-			$dbOpts = parse_url($dbUrl);
 
-			$dbHost = $dbOpts["host"];
- 			$dbPort = $dbOpts["port"];
- 			$dbUser = $dbOpts["user"];
- 			$dbPassword = $dbOpts["pass"];
- 			$dbName = ltrim($dbOpts["path"],'/');
-
-			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (PDOException $ex){
-  			echo 'Error!: ' . $ex->getMessage();
-  			die();
-		}
 
 
 		if ($teamName2 != "" && $weekNumber != "" && $score != "" && $opponentScore != "" && $projectedSpread != "" && $actualSpread != "") {
@@ -98,20 +88,29 @@
 
 			$teamID = $team['id'];
 		}
+		
 		if ($score > $opponentScore) {
 			$iswin = true;
 		}
-		$query4 = "INSERT INTO Spread (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
-		VALUES (" . $teamID . " ," .$weekNumber . " ," . $score . " ," . $opponentScore . " ," . $actualSpread . " ," . $iswin . ");"; 
-		}
+		
+		$query4 = "INSERT INTO Score (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
+		VALUES (" . $teamID . " ," . $weekNumber . " ," . $score . " ," . $opponentScore . " ," . $actualSpread . " ," . $iswin . ");"; 
 
-INSERT INTO Score (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
-VALUES (13, 1, 21, 21, 0, false);
+		$query5 = "INSERT INTO Spread (Team_id, Week_id, proj_spread)
+		VALUES (" . $teamID . " ," . $weekNumber . " ," . $projectedSpread . ");";
 
-		else {
+		$query6 = "INSERT INTO Analysis (Team_id, Week_id, spread_id, score_id, spreaddifference)
+		VALUES"
+
+		$db->query(query4);
+		$db->query(query5);
+
+	}
+
+		else {*/
 
 		//Set up table
-		if ($teamName != "") {
+		/*if ($teamName != "") {
 		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
@@ -174,7 +173,7 @@ VALUES (13, 1, 21, 21, 0, false);
 	echo "<br>Average spread difference: " . $totalDifference / $weeks . "</p>";
 }
 }
-
+*/
 
 	?>
 	</div>
