@@ -124,17 +124,17 @@ function insertData() {
 
 				//Analysis
 				$query3 = "UPDATE Analysis
-				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ spread_id = :spread_id, score_id = :score_id, spreaddifference = :spreaddifference
+				SET /*Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, */ spreaddifference = :spreaddifference
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				//get spreadDifference
 				$spreadDifference = $projectedSpread - $actualSpread;
 
 				$statement = $db->prepare($query3);
 
-				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber);
+/*				$statement->bindValue(':Team_id', $teamID);
+				$statement->bindValue(':Week_id', $weekNumber); 
 				$statement->bindValue(':spread_id', $spreadID);
-				$statement->bindValue(':score_id', $scoreID);
+				$statement->bindValue(':score_id', $scoreID); */
 				$statement->bindValue(':spreaddifference', $spreadDifference);
 
 				$statement->execute();
