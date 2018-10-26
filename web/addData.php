@@ -28,7 +28,7 @@ function insertData() {
 		//get isWin
 		if ($score > $opponentScore) {
 			$iswin = "true";
-		}
+			}
 		//echo $teamID . " " . $weekNumber . " " . $score . " " . $opponentScore . " " . $actualSpread . " " . $iswin;
 		$statement->bindValue(':Team_id', $teamID);
 		$statement->bindValue(':Week_id', $weekNumber);
@@ -40,6 +40,7 @@ function insertData() {
 		$statement->execute();
 
 		$scoreID = $db->lastInsertId("Score_id_seq");
+		echo $scoreID;
 
 		//Spread
 		$query2 = 'INSERT INTO Spread (Team_id, Week_id, proj_spread)
@@ -53,7 +54,7 @@ function insertData() {
 		$statement->execute();
 
 		$spreadID = $db->lastInsertId("Spread_id_seq");
-
+		echo $spreadID;
 		//Analysis
 		$query3 = 'INSERT INTO Analysis (Team_id, Week_id, spread_id, score_id, spreaddifference)
 		VALUES(:Team_id, :Week_id, :spread_id, :score_id, :spreaddifference)';
