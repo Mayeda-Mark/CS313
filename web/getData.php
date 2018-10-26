@@ -1,7 +1,7 @@
 <?php  
 
 	//require("dbConnect.php");
-	$db = get_db();
+	//$db = get_db();
 
 	$teamName = $_POST['Team1'];
 //Set up table
