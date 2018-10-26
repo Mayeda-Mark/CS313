@@ -24,7 +24,6 @@
 		foreach ($db->query($query4) as $spread) {
 			$testValue = $spread['proj_spread'];
 		}
-	}
 
 	if ($testValue) {
 
