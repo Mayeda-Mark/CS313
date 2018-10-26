@@ -4,6 +4,9 @@
 	function getData() {
 
 	$db = get_db();
+	$totalWins = 0;
+	$totalLosses = 0;
+	$totalDraws = 0;
 	$teamName = $_POST['Team1'];
 	if ($teamName != "") {
 	echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
