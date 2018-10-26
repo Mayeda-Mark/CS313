@@ -85,11 +85,12 @@ function insertData() {
 		}//End Add
 
 		if ($testValue) {
-
+			//Begin Edit
+			/***************************************************************************************************************************/
 			try {
 				//Score
 				$query1 = "UPDATE Score
-				SET Team_id = :Team_id, Week_id = :Week_id, TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
+				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				$statement = $db->prepare($query1);
 					//get isWin
@@ -97,8 +98,8 @@ function insertData() {
 						$iswin = "true";
 				}
 
-				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber);
+/*				$statement->bindValue(':Team_id', $teamID);
+				$statement->bindValue(':Week_id', $weekNumber);*/
 				$statement->bindValue(':TeamScore', $score);
 				$statement->bindValue(':OppScore', $opponentScore);
 				$statement->bindValue(':realSpread', $actualSpread);
@@ -109,14 +110,12 @@ function insertData() {
 				$scoreID = $db->lastUpdateId("Score_id_seq");
 
 				//Spread
-				$query2 = "UPDATE Spread
-				SET Team_id = :Team_id, Week_id = :Week_id, proj_spread = :proj_spread
-				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
+				$query2 = "UPDATE Spread SET /*Team_id = :Team_id, Week_id = :Week_id,*/ proj_spread = :proj_spread WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 
 				$statement = $db->prepare($query2);
-
+/*
 				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber);
+				$statement->bindValue(':Week_id', $weekNumber);*/
 				$statement->bindValue(':proj_spread', $projectedSpread);
 
 				$statement->execute();
@@ -125,7 +124,7 @@ function insertData() {
 
 				//Analysis
 				$query3 = "UPDATE Analysis
-				SET Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, spreaddifference = :spreaddifference
+				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ spread_id = :spread_id, score_id = :score_id, spreaddifference = :spreaddifference
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				//get spreadDifference
 				$spreadDifference = $projectedSpread - $actualSpread;
