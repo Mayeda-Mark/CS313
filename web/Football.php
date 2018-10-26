@@ -1,6 +1,7 @@
 <?php  
 require("dbConnect.php");
 require("getData.php");
+require("addData.php")
 $db = get_db();
 ?>
 <!DOCTYPE html>
@@ -60,6 +61,7 @@ $db = get_db();
 	<?php 
 
 	getData();
+	insertData();
 	/*
 		//Set Variables
 		$iswin = false;

@@ -1,8 +1,5 @@
 <?php  
 
-	//require("dbConnect.php");
-	//$db = get_db();
-
 //Set up table
 	function getData() {
 

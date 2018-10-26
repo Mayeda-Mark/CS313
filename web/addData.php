@@ -1,10 +1,8 @@
 <?php  
 //addData.php
 
-	require("dbConnect.php");
-	$db = get_db();
-
 function insertData() {
+	$db = get_db();
 	//Set Variables
 	$teamName2 = $_POST['Team2'];
 	$weekNumber = $_POST['weekNumber'];
