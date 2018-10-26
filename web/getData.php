@@ -34,7 +34,7 @@
 		echo $row['oppscore'] . "</td>"; 
 		//Win/Loss
 		if ($row['iswin']) {
-			echo "<td>W</td><td>" . $row['iswin']; 
+			echo "<td>W</td><td>"; 
 			$totalWins++;
 			}
 		elseif ($row['teamscore'] == $row["oppscore"]) {
@@ -56,9 +56,9 @@
 		else {
 		echo "<td>" . $row['spreaddifference'] . "</td></tr>";	
 		}
-		//Inciment Weeks
+		//Get running total of spread difference
 		$totalDifference += $row['spreaddifference'];
-		echo $row['iswin'];
+		//Inciment Weeks
 		$weeks++;
 }
 echo "</table>";

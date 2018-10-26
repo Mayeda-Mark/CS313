@@ -10,7 +10,7 @@ function insertData() {
 	$opponentScore = $_POST['opponentScore'];
 	$projectedSpread = $_POST['projectedSpread'];
 	$actualSpread = $_POST['actualSpread'];
-	$iswin = false;
+	$iswin = "false";
 
 	if ($teamName2 != "") {
 
@@ -27,7 +27,7 @@ function insertData() {
 		$statement = $db->prepare($query1);
 		//get isWin
 		if ($score > $opponentScore) {
-			$iswin = true;
+			$iswin = "true";
 		}
 		echo $teamID . " " . $weekNumber . " " . $score . " " . $opponentScore . " " . $actualSpread . " " . $iswin;
 		$statement->bindValue(':Team_id', $teamID);
