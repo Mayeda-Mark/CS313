@@ -11,7 +11,7 @@
 	$opponentScore = $_POST['opponentScore'];
 	$projectedSpread = $_POST['projectedSpread'];
 	$actualSpread = $_POST['actualSpread'];
-	$iswin = false;
+	$iswin = "false";
 
 	//get team id
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
@@ -29,13 +29,13 @@
 
 	try {
 		//Score
-		$query1 = 'UPDATE Score
+		$query1 = "UPDATE Score
 		SET Team_id = :Team_id, Week_id = :Week_id, TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
-		WHERE Team_id = "$teamID" AND Week_id = "$weekNumber"';
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 		$statement = $db->prepare($query1);
 		//get isWin
 		if ($score > $opponentScore) {
-			$iswin = true;
+			$iswin = "true";
 		}
 
 		$statement->bindValue(':Team_id', $teamID);
@@ -47,12 +47,12 @@
 
 		$statement->execute();
 
-		$scoreID = $db->lastUpdateId("score_id_seq");
+		$scoreID = $db->lastInsertId("score_id_seq");
 
 		//Spread
-		$query2 = 'UPDATE Spread
+		$query2 = "UPDATE Spread
 		SET Team_id = :Team_id, Week_id = :Week_id, proj_spread = :proj_spread
-		WHERE Team_id = "$teamID" AND Week_id = "$weekNumber"';
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 
 		$statement = $db->prepare($query2);
 
@@ -62,12 +62,12 @@
 
 		$statement->execute();
 
-		$spreadID = $db->lastUpdateId("Spread_id_seq");
+		$spreadID = $db->lastInsertId("Spread_id_seq");
 
 		//Analysis
-		$query3 = 'UPDATE Analysis
+		$query3 = "UPDATE Analysis
 		SET Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, spreaddifference = :spreaddifference
-		WHERE Team_id = "$teamID" AND Week_id = "$weekNumber"';
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 		//get spreadDifference
 		$spreadDifference = $projectedSpread - $actualSpread;
 
@@ -80,8 +80,6 @@
 		$statement->bindValue(':spreaddifference', $spreadDifference);
 
 		$statement->execute();
-
-		$analysisID = $db->lastUpdateId("Analysis_is_seq");
 
 		echo "Scores successfully updated.";
 	}

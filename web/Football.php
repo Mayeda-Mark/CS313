@@ -2,7 +2,7 @@
 require("dbConnect.php");
 require("getData.php");
 require("addData.php");
-require("editData.php");
+//require("editData.php");
 $db = get_db();
 ?>
 <!DOCTYPE html>

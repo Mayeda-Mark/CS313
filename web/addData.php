@@ -91,6 +91,71 @@ function insertData() {
 		die();
 	}
 }
+
+	if ($testValue) {
+
+	try {
+		//Score
+		$query1 = "UPDATE Score
+		SET Team_id = :Team_id, Week_id = :Week_id, TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
+		$statement = $db->prepare($query1);
+		//get isWin
+		if ($score > $opponentScore) {
+			$iswin = "true";
+		}
+
+		$statement->bindValue(':Team_id', $teamID);
+		$statement->bindValue(':Week_id', $weekNumber);
+		$statement->bindValue(':TeamScore', $score);
+		$statement->bindValue(':OppScore', $opponentScore);
+		$statement->bindValue(':realSpread', $actualSpread);
+		$statement->bindValue(':isWin', $iswin);
+
+		$statement->execute();
+
+		$scoreID = $db->lastInsertId("score_id_seq");
+
+		//Spread
+		$query2 = "UPDATE Spread
+		SET Team_id = :Team_id, Week_id = :Week_id, proj_spread = :proj_spread
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
+
+		$statement = $db->prepare($query2);
+
+		$statement->bindValue(':Team_id', $teamID);
+		$statement->bindValue(':Week_id', $weekNumber);
+		$statement->bindValue(':proj_spread', $projectedSpread);
+
+		$statement->execute();
+
+		$spreadID = $db->lastInsertId("Spread_id_seq");
+
+		//Analysis
+		$query3 = "UPDATE Analysis
+		SET Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, spreaddifference = :spreaddifference
+		WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
+		//get spreadDifference
+		$spreadDifference = $projectedSpread - $actualSpread;
+
+		$statement->prepare($query3);
+
+		$statement->bindValue(':Team_id', $teamID);
+		$statement->bindValue(':Week_id', $weekNumber);
+		$statement->bindValue(':spread_id', $spreadID);
+		$statement->bindValue(':score_id', $scoreID);
+		$statement->bindValue(':spreaddifference', $spreadDifference);
+
+		$statement->execute();
+
+		echo "Scores successfully updated.";
+	}
+
+	catch(Exception $ex) {
+		echo "Error with DB. DetailsL $ex";
+		die();
+	}
+}
 }
 }
 ?>
