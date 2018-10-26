@@ -14,6 +14,7 @@ function insertData() {
 	$testValue = 0;
 
 	if ($teamName2 != "") {
+		echo "test";
 
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 		foreach ($db->query($query) as $team) {
