@@ -29,7 +29,7 @@ function insertData() {
 		if ($score > $opponentScore) {
 			$iswin = "true";
 		}
-		echo $teamID . " " . $weekNumber . " " . $score . " " . $opponentScore . " " . $actualSpread . " " . $iswin;
+		//echo $teamID . " " . $weekNumber . " " . $score . " " . $opponentScore . " " . $actualSpread . " " . $iswin;
 		$statement->bindValue(':Team_id', $teamID);
 		$statement->bindValue(':Week_id', $weekNumber);
 		$statement->bindValue(':TeamScore', $score);
@@ -67,10 +67,14 @@ function insertData() {
 		$statement->bindValue(':spread_id', $spreadID);
 		$statement->bindValue(':score_id', $scoreID);
 		$statement->bindValue(':spreaddifference', $spreadDifference);
+		try{
 
 		$statement->execute();
-
-		$analysisID = $db->lastInsertId("Analysis_is_seq");
+	}
+		catch(Exception $ex) {
+			echo "issue with execute : $ex";
+		}
+		//$analysisID = $db->lastInsertId("Analysis_is_seq");
 
 		echo "Scores successfully added.";
 	}
