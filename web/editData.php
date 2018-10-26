@@ -1,10 +1,8 @@
 <?php  
 //editData.php
 
-	require("dbConnect.php");
-	$db = get_db();
-
 	function editData(){
+	$db = get_db();
 
 
 	$teamName2 = $_POST['Team2'];
@@ -21,6 +19,14 @@
 
 			$teamID = $team['id'];
 		}
+
+	$query4 = 'SELECT proj_spread FROM Spread WHERE team_id = "$teamID" AND week_id = "$weekNumber";';
+		foreach ($db->query($query4) as $spread) {
+			$testValue = $spread['proj_spread'];
+		}
+	}
+
+	if ($testValue) {
 
 	try {
 		//Score
@@ -85,5 +91,6 @@
 		echo "Error with DB. DetailsL $ex";
 		die();
 	}
+}
 }
 ?>

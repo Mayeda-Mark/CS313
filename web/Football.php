@@ -2,6 +2,7 @@
 require("dbConnect.php");
 require("getData.php");
 require("addData.php");
+require("editData.php")
 $db = get_db();
 ?>
 <!DOCTYPE html>
@@ -61,6 +62,16 @@ $db = get_db();
 	<?php 
 
 	getData();
+
+
+	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
+		foreach ($db->query($query) as $team) {
+
+			$teamID = $team['id'];
+		}
+	$query7 = 'SELECT proj_spread FROM Spread WHERE team_id = "$teamID" AND week_id = "$weekNumber";';
+		
+	}
 	insertData();
 	/*
 		//Set Variables

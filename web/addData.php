@@ -12,7 +12,7 @@ function insertData() {
 	$actualSpread = $_POST['actualSpread'];
 	$iswin = "false";
 
-	if ($teamName2 != "") {
+	
 
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 		foreach ($db->query($query) as $team) {
@@ -20,6 +20,12 @@ function insertData() {
 			$teamID = $team['id'];
 		}
 
+	$query4 = 'SELECT proj_spread FROM Spread WHERE team_id = "$teamID" AND week_id = "$weekNumber";';
+		foreach ($db->query($query4) as $spread) {
+			$testValue = $spread['proj_spread'];
+		}
+	if (!$testValue) {
+		
 	try {
 		//Score
 		$query1 = 'INSERT INTO Score (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
@@ -40,7 +46,6 @@ function insertData() {
 		$statement->execute();
 
 		$scoreID = $db->lastInsertId("Score_id_seq");
-		echo $scoreID;
 
 		//Spread
 		$query2 = 'INSERT INTO Spread (Team_id, Week_id, proj_spread)
@@ -54,13 +59,11 @@ function insertData() {
 		$statement->execute();
 
 		$spreadID = $db->lastInsertId("Spread_id_seq");
-		echo $spreadID;
 		//Analysis
 		$query3 = 'INSERT INTO Analysis (Team_id, Week_id, spread_id, score_id, spreaddifference)
 		VALUES(:Team_id, :Week_id, :spread_id, :score_id, :spreaddifference)';
 		//get spreadDifference
 		$spreadDifference = $projectedSpread - $actualSpread;
-		echo $spreadDifference;
 
 		$statement = $db->prepare($query3);
 
@@ -72,7 +75,6 @@ function insertData() {
 		try{
 
 		$statement->execute();
-		echo "trying to execute";
 	}
 		catch(Exception $ex) {
 			echo "issue with execute : $ex";
