@@ -114,7 +114,7 @@ function insertData() {
 
 		$statement->execute();
 
-		$scoreID = $db->lastInsertId("Score_id_seq");
+		$scoreID = $db->lastUpdateId("Score_id_seq");
 
 		//Spread
 		$query2 = "UPDATE Spread
