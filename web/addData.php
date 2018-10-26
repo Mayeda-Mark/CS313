@@ -25,6 +25,7 @@ function insertData() {
 		foreach ($db->query($query4) as $spread) {
 			$testValue ++;
 		}
+		echo $testValue;
 	if (!$testValue) {
 
 	try {
