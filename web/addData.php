@@ -90,7 +90,7 @@ function insertData() {
 			try {
 				//Score
 				$query1 = "UPDATE Score
-				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
+				SET TeamScore = :TeamScore, OppScore = :OppScore, realSpread = :realSpread, isWin = :isWin
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				$statement = $db->prepare($query1);
 					//get isWin
@@ -98,8 +98,6 @@ function insertData() {
 						$iswin = "true";
 				}
 
-/*				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber);*/
 				$statement->bindValue(':TeamScore', $score);
 				$statement->bindValue(':OppScore', $opponentScore);
 				$statement->bindValue(':realSpread', $actualSpread);
@@ -107,38 +105,29 @@ function insertData() {
 
 				$statement->execute();
 
-				//$scoreID = $db->lastUpdateId("Score_id_seq");
 
 				echo $actualSpread . " " . $projectedSpread . " " ;
 				//Spread
 				$query2 = "UPDATE Spread 
-				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ Proj_spread = :proj_spread 
+				SET Proj_spread = :proj_spread 
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 
 				echo $query2;
 				$statement = $db->prepare($query2);
-/*
-				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber);*/
+
 				$statement->bindValue(':proj_spread', $projectedSpread);
 
 				$statement->execute();
 
-				//$spreadID = $db->lastUpdateId("Spread_id_seq");
-
 				//Analysis
 				$query3 = "UPDATE Analysis
-				SET /*Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, */ spreaddifference = :spreadDifference
+				SET spreaddifference = :spreadDifference
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				//get spreadDifference
 				$spreadDifference = $projectedSpread - $actualSpread;
 
 				$statement = $db->prepare($query3);
 
-/*				$statement->bindValue(':Team_id', $teamID);
-				$statement->bindValue(':Week_id', $weekNumber); 
-				$statement->bindValue(':spread_id', $spreadID);
-				$statement->bindValue(':score_id', $scoreID); */
 				$statement->bindValue(':spreaddifference', $spreadDifference);
 
 				$statement->execute();
