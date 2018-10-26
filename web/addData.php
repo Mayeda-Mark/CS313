@@ -62,7 +62,7 @@ function insertData() {
 		$spreadDifference = $projectedSpread - $actualSpread;
 		echo $spreadDifference;
 
-		$statement->prepare($query3);
+		$statement = $db->prepare($query3);
 
 		$statement->bindValue(':Team_id', $teamID);
 		$statement->bindValue(':Week_id', $weekNumber);
