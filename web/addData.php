@@ -109,8 +109,11 @@ function insertData() {
 
 				$scoreID = $db->lastUpdateId("Score_id_seq");
 
+				echo $actualSpread . " " . $projectedSpread . " " ;
 				//Spread
-				$query2 = "UPDATE Spread SET /*Team_id = :Team_id, Week_id = :Week_id,*/ proj_spread = :proj_spread WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
+				$query2 = "UPDATE Spread 
+				SET /*Team_id = :Team_id, Week_id = :Week_id,*/ Proj_spread = :proj_spread 
+				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 
 				$statement = $db->prepare($query2);
 /*
@@ -124,7 +127,7 @@ function insertData() {
 
 				//Analysis
 				$query3 = "UPDATE Analysis
-				SET /*Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, */ spreaddifference = :spreaddifference
+				SET /*Team_id = :Team_id, Week_id = :Week_id, spread_id = :spread_id, score_id = :score_id, */ spreaddifference = :spreadDifference
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				//get spreadDifference
 				$spreadDifference = $projectedSpread - $actualSpread;
