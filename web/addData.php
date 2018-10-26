@@ -29,7 +29,7 @@ function insertData() {
 		if ($score > $opponentScore) {
 			$iswin = true;
 		}
-
+		echo $teamID . $weekNumber . $score . $opponentScore . $actualSpread . $iswin;
 		$statement->bindValue(':Team_id', $teamID);
 		$statement->bindValue(':Week_id', $weekNumber);
 		$statement->bindValue(':TeamScore', $score);
