@@ -20,6 +20,7 @@
 	$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 	foreach ($db->query($query1) as $team) {
 		$teamID = $team['id'];
+		echo $team['id'];
 	}
 
 	//Get table
