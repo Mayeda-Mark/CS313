@@ -124,7 +124,7 @@ function insertData() {
 
 				$statement->execute();
 
-				$spreadID = $db->lastUpdateId("Spread_id_seq");
+				//$spreadID = $db->lastUpdateId("Spread_id_seq");
 
 				//Analysis
 				$query3 = "UPDATE Analysis
