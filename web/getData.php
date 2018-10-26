@@ -19,7 +19,6 @@
 	$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
 	foreach ($db->query($query1) as $team) {
 		$teamID = $team['id'];
-		echo $team['id'];
 	}
 
 	//Get table
@@ -35,7 +34,7 @@
 		echo $row['oppscore'] . "</td>"; 
 		//Win/Loss
 		if ($row['iswin']) {
-			echo "<td>W</td><td>"; 
+			echo "<td>W</td><td>" . $row['iswin']; 
 			$totalWins++;
 			}
 		elseif ($row['teamscore'] == $row["oppscore"]) {
