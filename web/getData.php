@@ -3,9 +3,10 @@
 	//require("dbConnect.php");
 	//$db = get_db();
 
-	$teamName = $_POST['Team1'];
 //Set up table
 	function getData() {
+	$teamName = $_POST['Team1'];
+	if ($teamName != "") {
 	echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
 	echo "<th>Week</th>";
 	echo "<th>Score</th>";
@@ -66,5 +67,6 @@ if ($totalDraws) {
 	echo "/" . $totalDraws;
 }
 echo "<br>Average spread difference: " . $totalDifference / $weeks . "</p>";
+}
 }
 ?>
