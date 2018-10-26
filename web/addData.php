@@ -14,7 +14,6 @@ function insertData() {
 	$testValue = 0;
 
 	if ($teamName2 != "") {
-		echo "test";
 
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 		foreach ($db->query($query) as $team) {
@@ -22,7 +21,7 @@ function insertData() {
 			$teamID = $team['id'];
 		}
 
-	$query4 = 'SELECT proj_spread FROM Spread WHERE team_id = "$teamID" AND week_id = "$weekNumber";';
+	$query4 = "SELECT proj_spread FROM Spread WHERE team_id = " . $teamID . " AND week_id = " . $weekNumber . ";";
 		foreach ($db->query($query4) as $spread) {
 			$testValue ++;
 		}
