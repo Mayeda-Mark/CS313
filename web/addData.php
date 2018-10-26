@@ -12,7 +12,7 @@ function insertData() {
 	$actualSpread = $_POST['actualSpread'];
 	$iswin = "false";
 
-	
+	if ($teamName2 != "") {
 
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 		foreach ($db->query($query) as $team) {
@@ -25,7 +25,7 @@ function insertData() {
 			$testValue = $spread['proj_spread'];
 		}
 	if (!$testValue) {
-		
+
 	try {
 		//Score
 		$query1 = 'INSERT INTO Score (Team_id, Week_id, TeamScore, OppScore, realSpread, isWin)
@@ -88,6 +88,7 @@ function insertData() {
 		echo "Error with DB. DetailsL $ex";
 		die();
 	}
+}
 }
 }
 ?>
