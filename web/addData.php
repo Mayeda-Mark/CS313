@@ -110,7 +110,6 @@ function insertData() {
 				SET Proj_spread = :proj_spread 
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 
-				echo $query2;
 				$statement = $db->prepare($query2);
 
 				$statement->bindValue(':proj_spread', $projectedSpread);
