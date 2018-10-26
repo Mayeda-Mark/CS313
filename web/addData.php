@@ -11,6 +11,7 @@ function insertData() {
 	$projectedSpread = $_POST['projectedSpread'];
 	$actualSpread = $_POST['actualSpread'];
 	$iswin = "false";
+	$testValue = 0;
 
 	if ($teamName2 != "") {
 
@@ -22,7 +23,7 @@ function insertData() {
 
 	$query4 = 'SELECT proj_spread FROM Spread WHERE team_id = "$teamID" AND week_id = "$weekNumber";';
 		foreach ($db->query($query4) as $spread) {
-			$testValue = $spread['proj_spread'];
+			$testValue ++;
 		}
 	if (!$testValue) {
 
