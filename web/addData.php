@@ -60,6 +60,7 @@ function insertData() {
 		VALUES(:Team_id, :Week_id, :spread_id, :score_id, :spreaddifference)';
 		//get spreadDifference
 		$spreadDifference = $projectedSpread - $actualSpread;
+		echo $spreadDifference;
 
 		$statement->prepare($query3);
 
@@ -71,6 +72,7 @@ function insertData() {
 		try{
 
 		$statement->execute();
+		echo "trying to execute";
 	}
 		catch(Exception $ex) {
 			echo "issue with execute : $ex";
