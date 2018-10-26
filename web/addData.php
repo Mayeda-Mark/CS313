@@ -107,7 +107,7 @@ function insertData() {
 
 				$statement->execute();
 
-				$scoreID = $db->lastUpdateId("Score_id_seq");
+				//$scoreID = $db->lastUpdateId("Score_id_seq");
 
 				echo $actualSpread . " " . $projectedSpread . " " ;
 				//Spread
