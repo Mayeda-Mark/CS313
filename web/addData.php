@@ -12,6 +12,7 @@ function insertData() {
 	$actualSpread = $_POST['actualSpread'];
 	$iswin = false;
 
+	if ($teamName2 != "") {
 
 	$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 		foreach ($db->query($query) as $team) {
@@ -78,5 +79,6 @@ function insertData() {
 		echo "Error with DB. DetailsL $ex";
 		die();
 	}
+}
 }
 ?>
