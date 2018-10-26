@@ -105,8 +105,6 @@ function insertData() {
 
 				$statement->execute();
 
-
-				echo $actualSpread . " " . $projectedSpread . " " ;
 				//Spread
 				$query2 = "UPDATE Spread 
 				SET Proj_spread = :proj_spread 
@@ -121,14 +119,14 @@ function insertData() {
 
 				//Analysis
 				$query3 = "UPDATE Analysis
-				SET spreaddifference = :spreadDifference
+				SET spreadDifference = :spreadDifference
 				WHERE Team_id = " . $teamID . " AND Week_id = " . $weekNumber . ";";
 				//get spreadDifference
 				$spreadDifference = $projectedSpread - $actualSpread;
 
 				$statement = $db->prepare($query3);
 
-				$statement->bindValue(':spreaddifference', $spreadDifference);
+				$statement->bindValue(':spreadDifference', $spreadDifference);
 
 				$statement->execute();
 
