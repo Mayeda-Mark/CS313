@@ -58,6 +58,7 @@
 		}
 		//Inciment Weeks
 		$totalDifference += $row['spreaddifference'];
+		echo $row['iswin'];
 		$weeks++;
 }
 echo "</table>";
