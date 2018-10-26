@@ -5,6 +5,8 @@
 
 //Set up table
 	function getData() {
+
+	$db = get_db();
 	$teamName = $_POST['Team1'];
 	if ($teamName != "") {
 	echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
