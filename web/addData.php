@@ -13,14 +13,17 @@ function insertData() {
 	$iswin = "false";
 	$testValue = 0;
 
+	//Only do stuff if there is a team in the second select
 	if ($teamName2 != "") {
 
+			//Get teamID
 			$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
 				foreach ($db->query($query) as $team) {
 
 					$teamID = $team['id'];
 				}
 
+			//Only add if there isn't any data where the week and team match up
 			$query4 = "SELECT proj_spread FROM Spread WHERE team_id = " . $teamID . " AND week_id = " . $weekNumber . ";";
 				foreach ($db->query($query4) as $spread) {
 					$testValue ++;
@@ -84,6 +87,7 @@ function insertData() {
 			}
 		}//End Add
 
+		//Only edit if there is already data for the week/team match
 		if ($testValue) {
 			//Begin Edit
 			/***************************************************************************************************************************/
@@ -136,7 +140,7 @@ function insertData() {
 				echo "Error with DB. DetailsL $ex";
 				die();
 			}
-		}
+		}// End edit
 	}
 }
 ?>

@@ -1,7 +1,6 @@
 <?php  
 /* TODO:
 	-Make select option filler function
-	-Clean up getData
 	-Dynamic borders?
 	-Fix ordering in getData (by week)
 */
