@@ -14,13 +14,13 @@ function insertData() {
 	$testValue = 0;
 
 	//Only do stuff if there is a team in the second select
-	if ($teamName2 != "") {
+	if ($teamID2 != "") {
 
 			//Get teamID
-			$query = "SELECT id FROM Team WHERE Name = '" . $teamName2 . "';";
+			$query = "SELECT name FROM Team WHERE Name = '" . $teamID2 . "';";
 				foreach ($db->query($query) as $team) {
 
-					$teamID = $team['id'];
+					$teamName2 = $team['name'];
 				}
 
 			//Only add if there isn't any data where the week and team match up
