@@ -8,9 +8,17 @@
 	$totalWins = 0;
 	$totalLosses = 0;
 	$totalDraws = 0;
-	$teamName = $_POST['Team1'];
+	$teamID = $_POST['Team1'];
 	//Only do stuff if ther eis a value in the first select
-	if ($teamName != "") {
+	if ($teamID != "") {
+
+		//Get team id
+		$query1 = "SELECT name FROM Team WHERE id = '" . $teamID . "';";
+		foreach ($db->query($query1) as $team) {
+			$teamName = $team['name'];
+		}
+
+		//Table headings
 		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
@@ -19,12 +27,6 @@
 		echo "<th>Projected Spread</th>";
 		echo "<th>Actual Spread</th>";
 		echo "<th>Spread Difference</th></tr>";
-
-		//Get team id
-		$query1 = "SELECT id FROM Team WHERE Name = '" . $teamName . "';";
-		foreach ($db->query($query1) as $team) {
-			$teamID = $team['id'];
-		}
 
 		//Get table
 		$query2 = "SELECT Analysis.Team_id, Analysis.Week_id, Score.teamScore, Score.oppScore, Score.iswin, Spread.proj_spread, Score.realSpread, Analysis.spreadDifference FROM ((Analysis INNER JOIN Spread ON Analysis.spread_id = Spread.id) INNER JOIN Score ON Analysis.score_id = Score.id) WHERE Analysis.Team_id = " . $teamID . " ORDER BY Analysis.Week_id;";

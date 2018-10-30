@@ -6,7 +6,7 @@ function selectTeam() {
 	//
 	$query1 = "SELECT * FROM Team ORDER BY name;";
 	foreach ($db->query($query1) as $row) {
-		echo "<option value=" . $row['name'] . ">" . $row['name'] . " </option>";
+		echo "<option value=" . $row['id'] . ">" . $row['name'] . " </option>";
 	}
 }
 ?>
