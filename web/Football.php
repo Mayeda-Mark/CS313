@@ -27,7 +27,6 @@ $db = get_db();
 				<option value=""  selected>-Select-</option>
 				<?php 
 				selectTeam();
-
 				?>
 				<!--
 				<option value="New England Patriots">New England Patriots</option>
@@ -74,6 +73,10 @@ $db = get_db();
 	<form id="edit"  method="post" action="Football.php">
 			Team: <select name="Team2">
 				<option value=""  selected>-Select-</option>
+				<?php 
+				selectTeam();
+				?>
+				<!--
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
 				<opDallas Cowboystion value="Philadelphia Eagles">Philadelphia Eagles</option>
@@ -106,6 +109,7 @@ $db = get_db();
 				<option value="Indianapolis Colts">Indianapolis Colts</option>
 				<option value="Tennesse Titans">Tennesse Titans</option>
 				<option value="Tampa Bay Buccaneers">Tampa Bay Buccaneers</option>
+			-->
 			</select>
 			Week Number: <select name="weekNumber">
 				<option value="" selected>-Select-</option>
