@@ -6,6 +6,7 @@
 require("dbConnect.php");
 require("getData.php");
 require("addData.php");
+require("teamSelect.php");
 $db = get_db();
 ?>
 <!DOCTYPE html>
@@ -24,6 +25,11 @@ $db = get_db();
 		<form id="Team"  method="post" action="Football.php">
 			<select name="Team1">
 				<option value=""  selected>-Select-</option>
+				<?php 
+				selectTeam();
+
+				?>
+				<!--
 				<option value="New England Patriots">New England Patriots</option>
 				<option value="Dallas Cowboys">Dallas Cowboys</option>
 				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
@@ -55,7 +61,8 @@ $db = get_db();
 				<option value="Jacksonville Jaguars">Jacksonville Jaguars</option>
 				<option value="Indianapolis Colts">Indianapolis Colts</option>
 				<option value="Tennesse Titans">Tennesse Titans</option>
-				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option>
+				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option> 
+			-->
 			</select>
 			<br>
 			<button type="submit" form="Team">Submit</button>
