@@ -67,12 +67,12 @@ $db = get_db();
 				<option value="16">Week 16</option>
 			-->
 			</select>
-			<br><br>
+			<br>
 			Score: <input type="text" name="score" size="4">
 			Opponent Score: <input type="text" name="opponentScore" size="4">
 			Projected Spread: <input type="text" name="projectedSpread" size="4">
 			Actual Spread: <input type="text" name="actualSpread" size="4">
-			<br><br>
+			<br>
 			<button type="submit" form="edit">Submit</button>
 		</form>
 	</div>

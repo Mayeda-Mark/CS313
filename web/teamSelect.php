@@ -15,7 +15,7 @@ function selectWeek(){
 
 	$query2 = "SELECT * FROM Week ORDER BY id;";
 	foreach ($db->query($query2) as $week) {
-		echo "<option value=" . $week['week'] . ">" . $week['week'] . "</option>"; 
+		echo "<option value=" . $week['week'] . "> Week " . $week['week'] . "</option>"; 
 	}
 }
 ?>
