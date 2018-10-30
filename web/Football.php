@@ -2,7 +2,6 @@
 /* TODO:
 	-Make select option filler function
 	-Dynamic borders?
-	-Fix ordering in getData (by week)
 */
 require("dbConnect.php");
 require("getData.php");
@@ -12,6 +11,7 @@ $db = get_db();
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="football.css">
 	<title>Football Spreads</title>
 </head>
 <body>
@@ -119,7 +119,7 @@ $db = get_db();
 				<option value="15">Week 15</option>
 				<option value="16">Week 16</option>
 			</select>
-			<br>
+			<br><br>
 			Score: <input type="text" name="score" size="4">
 			Opponent Score: <input type="text" name="opponentScore" size="4">
 			Projected Spread: <input type="text" name="projectedSpread" size="4">
