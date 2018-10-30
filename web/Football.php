@@ -28,40 +28,6 @@ $db = get_db();
 				<?php 
 				selectTeam();
 				?>
-				<!--
-				<option value="New England Patriots">New England Patriots</option>
-				<option value="Dallas Cowboys">Dallas Cowboys</option>
-				<option value="Philadelphia Eagles">Philadelphia Eagles</option>
-				<option value="Pittsburgh Steelers">Pittsburgh Steelers</option>
-				<option value="Green Bay Packers">Green Bay Packers</option>
-				<option value="New York Giants">New York Giants</option>
-				<option value="Seattle Seahawks">Seattle Seahawks</option>
-				<option value="Oakland Raiders">Oakland Raiders</option>
-				<option value="Chicago Bears">Chicage Bears</option>
-				<option value="Minnesota Vikings">Minnesota Vikings</option>
-				<option value="Kansas City Chiefs">Kansas City Chiefs</option>
-				<option value="San Francisco 49ers">San Francisco 49ers</option>
-				<option value="Cleveland Browns">Cleveland Browns</option>
-				<option value="Denver Broncos">Denver Broncos</option>
-				<option value="Los Angeles Rams">Los Angeles Rams</option>
-				<option value="Miami Dolphins">Miami Dolphins</option>
-				<option value="Washington Redskins">Washington Redskins</option>
-				<option value="Cincinnati Bengals">Cincinnati Bengals</option>
-				<option value="Baltimore Ravens">Baltimore Ravens</option>
-				<option value="New York Jets">New York Jets</option>
-				<option value="Carolina Panthers">Carolina Panthers</option>
-				<option value="Buffalo Bills">Buffalo Bills</option>
-				<option value="Arizona Cardinals">Arizona Cardinals</option>
-				<option value="New Orleans Saints">New Orleans Saints</option>
-				<option value="Atlanta Falcons">Atlanta Falcons</option>
-				<option value="Los Angeles Chargers">Los Angeles Chargers</option>
-				<option value="Houston Texans">Houston Texans</option>
-				<option value="Detroit Lions">Detroit Lions</option>
-				<option value="Jacksonville Jaguars">Jacksonville Jaguars</option>
-				<option value="Indianapolis Colts">Indianapolis Colts</option>
-				<option value="Tennesse Titans">Tennesse Titans</option>
-				<option value="Tampa Bay Buccaneers">Tamps Bay Buccaneers</option> 
-			-->
 			</select>
 			<br>
 			<button type="submit" form="Team">Submit</button>
@@ -76,43 +42,13 @@ $db = get_db();
 				<?php 
 				selectTeam();
 				?>
-				<!--
-				<option value="New England Patriots">New England Patriots</option>
-				<option value="Dallas Cowboys">Dallas Cowboys</option>
-				<opDallas Cowboystion value="Philadelphia Eagles">Philadelphia Eagles</option>
-				<option value="Pittsburgh Steelers">Pittsburgh Steelers</option>
-				<option value="Green Bay Packers">Green Bay Packers</option>
-				<option value="New York Giants">New York Giants</option>
-				<option value="Seattle Seahawks">Seattle Seahawks</option>
-				<option value="Oakland Raiders">Oakland Raiders</option>
-				<option value="Chicago Bears">Chicage Bears</option>
-				<option value="Minnesota Vikings">Minnesota Vikings</option>
-				<option value="Kansas City Chiefs">Kansas City Chiefs</option>
-				<option value="San Francisco 49ers">San Francisco 49ers</option>
-				<option value="Cleveland Browns">Cleveland Browns</option>
-				<option value="Denver Broncos">Denver Broncos</option>
-				<option value="Los Angeles Rams">Los Angeles Rams</option>
-				<option value="Miami Dolphins">Miami Dolphins</option>
-				<option value="Washington Redskins">Washington Redskins</option>
-				<option value="Cincinnati Bengals">Cincinnati Bengals</option>
-				<option value="Baltimore Ravens">Baltimore Ravens</option>
-				<option value="New York Jets">New York Jets</option>
-				<option value="Carolina Panthers">Carolina Panthers</option>
-				<option value="Buffalo Bills">Buffalo Bills</option>
-				<option value="Arizona Cardinals">Arizona Cardinals</option>
-				<option value="New Orleans Saints">New Orleans Saints</option>
-				<option value="Atlanta Falcons">Atlanta Falcons</option>
-				<option value="Los Angeles Chargers">Los Angeles Chargers</option>
-				<option value="Houston Texans">Houston Texans</option>
-				<option value="Detroit Lions">Detroit Lions</option>
-				<option value="Jacksonville Jaguars">Jacksonville Jaguars</option>
-				<option value="Indianapolis Colts">Indianapolis Colts</option>
-				<option value="Tennesse Titans">Tennesse Titans</option>
-				<option value="Tampa Bay Buccaneers">Tampa Bay Buccaneers</option>
-			-->
 			</select>
 			Week Number: <select name="weekNumber">
 				<option value="" selected>-Select-</option>
+				<?php  
+				selectWeek();
+				?>
+				<!--
 				<option value="1">Week 1</option>
 				<option value="2">Week 2</option>
 				<option value="3">Week 3</option>
@@ -129,13 +65,14 @@ $db = get_db();
 				<option value="14">Week 14</option>
 				<option value="15">Week 15</option>
 				<option value="16">Week 16</option>
+			-->
 			</select>
 			<br><br>
 			Score: <input type="text" name="score" size="4">
 			Opponent Score: <input type="text" name="opponentScore" size="4">
 			Projected Spread: <input type="text" name="projectedSpread" size="4">
 			Actual Spread: <input type="text" name="actualSpread" size="4">
-			<br>
+			<br><br>
 			<button type="submit" form="edit">Submit</button>
 		</form>
 	</div>
