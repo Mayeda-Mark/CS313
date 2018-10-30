@@ -4,7 +4,7 @@
 function insertData() {
 	$db = get_db();
 	//Set Variables
-	$teamName2 = $_POST['Team2'];
+	$teamID2 = $_POST['Team2'];
 	$weekNumber = $_POST['weekNumber'];
 	$score = $_POST['score'];
 	$opponentScore = $_POST['opponentScore'];
