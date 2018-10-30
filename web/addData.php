@@ -4,7 +4,7 @@
 function insertData() {
 	$db = get_db();
 	//Set Variables
-	$teamID2 = $_POST['Team2'];
+	$teamID = $_POST['Team2'];
 	$weekNumber = $_POST['weekNumber'];
 	$score = $_POST['score'];
 	$opponentScore = $_POST['opponentScore'];
@@ -14,10 +14,10 @@ function insertData() {
 	$testValue = 0;
 
 	//Only do stuff if there is a team in the second select
-	if ($teamID2 != "") {
+	if ($teamID != "") {
 
 			//Get teamID
-			$query = "SELECT name FROM Team WHERE Name = '" . $teamID2 . "';";
+			$query = "SELECT name FROM Team WHERE Name = '" . $teamID . "';";
 				foreach ($db->query($query) as $team) {
 
 					$teamName2 = $team['name'];
