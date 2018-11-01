@@ -26,10 +26,8 @@
 		$statement->bindValue(':password', $password);
 
 		$statement->execute();
-		//header('location'.$newUrl);
+		header('location'.$newUrl);
 	}
-
-
 
 	?>
 </body>
