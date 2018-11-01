@@ -8,7 +8,7 @@
 		Name: <input type="text" name="name">
 		Password: <input type="text" name="password">
 		<input type="submit" name="sign up" value="Submit">
-	</form><!--
+	</form>
 	<?php 
 	require("dbConnect.php");
 	$db = get_db();
@@ -26,11 +26,11 @@
 		$statement->bindValue(':password', $password);
 
 		$statement->execute();
-		header('location'.$newUrl);
+		//header('location'.$newUrl);
 	}
 
 
 
-	?>-->
+	?>
 </body>
 </html>
