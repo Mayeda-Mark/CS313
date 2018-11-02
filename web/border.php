@@ -8,10 +8,10 @@ function getBorder(){
 	$teamID = $_POST['Team1'];
 	switch ($teamID) {
 		case '1':
-			$colorLeft = "navy";
+			$colorLeft = "1F1B69";
 			$colorRight = "red";
 			break;
-		case '':
+		/*case '':
 			$colorLeft = "";
 			$colorRight = "";
 			break;
@@ -131,6 +131,7 @@ function getBorder(){
 			$colorLeft = "";
 			$colorRight = "";
 			break;
+			*/
 		default:
 			$colorLeft = "blue";
 			$colorRight = "red";
