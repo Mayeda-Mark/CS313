@@ -1,3 +1,6 @@
+<?php  
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +23,12 @@
 		$query = "INSERT INTO web_users (user_name, password)
 		VALUES(:name, :password);";
 
+		$hashPass = password_hash($password, PASSWORD_DEFAULT);
+		$_SESSION['password'] = $hashPass;
 		$statement = $db->prepare($query);
 
 		$statement->bindValue(':name', $name);
-		$statement->bindValue(':password', $password);
+		$statement->bindValue(':password', $hashPass);
 
 		$statement->execute();
 		header('location'.$newUrl);
