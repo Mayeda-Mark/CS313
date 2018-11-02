@@ -7,136 +7,172 @@ function getBorder(){
 
 	$teamID = $_POST['Team1'];
 	switch ($teamID) {
+		//Patriots
 		case '1':
 			$colorLeft = "#1F1B69";
 			$colorRight = "red";
 			break;
-		/*case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Cowboys
+		case '2':
+			$colorLeft = "silver";
+			$colorRight = "#1F1B69";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Eagles
+		case '3':
+			$colorLeft = "#317D35";
+			$colorRight = "black";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Steelers
+		case '4':
+			$colorLeft = "black";
+			$colorRight = "yellow";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Packers
+		case '5':
+			$colorLeft = "#317D35";
+			$colorRight = "yellow";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Giants
+		case '6':
+			$colorLeft = "red";
+			$colorRight = "blue";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Seahawks
+		case '7':
+			$colorLeft = "navy";
+			$colorRight = "lime";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Raiders
+		case '8':
+			$colorLeft = "black";
+			$colorRight = "gray";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Bears
+		case '9':
+			$colorLeft = "#1F1B69";
+			$colorRight = "#F47E0E";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Vikings
+		case '10':
+			$colorLeft = "purple";
+			$colorRight = "yellow";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Chiefs
+		case '11':
+			$colorLeft = "red";
+			$colorRight = "gold";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//49ers
+		case '12':
+			$colorLeft = "red";
+			$colorRight = "gold";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Browns
+		case '13':
+			$colorLeft = "#935112";
+			$colorRight = "orange";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Broncos
+		case '14':
+			$colorLeft = "orange";
+			$colorRight = "#1F1B69";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Rams
+		case '15':
+			$colorLeft = "#1F1B69";
+			$colorRight = "yellow";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Dolphins
+		case '16':
+			$colorLeft = "aqua";
+			$colorRight = "orange";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Redskins
+		case '17':
+			$colorLeft = "maroon";
+			$colorRight = "gold";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Bengals
+		case '18':
+			$colorLeft = "orange";
+			$colorRight = "black";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Ravens
+		case '19':
+			$colorLeft = "black";
+			$colorRight = "purple";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Jets
+		case '20':
+			$colorLeft = "#317D35";
+			$colorRight = "white";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Panthers
+		case '21':
+			$colorLeft = "black";
+			$colorRight = "teal";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Bills
+		case '22':
+			$colorLeft = "blue";
+			$colorRight = "red";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Cardinals
+		case '23':
+			$colorLeft = "black";
+			$colorRight = "red";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Saints
+		case '24':
+			$colorLeft = "black";
+			$colorRight = "gold";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Falcons
+		case '25':
+			$colorLeft = "red";
+			$colorRight = "black";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Chargers
+		case '26':
+			$colorLeft = "blue";
+			$colorRight = "yellow";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Texans
+		case '27':
+			$colorLeft = "#1F1B69";
+			$colorRight = "red";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Lions
+		case '28':
+			$colorLeft = "399ACF";
+			$colorRight = "silver";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Jaguars
+		case '29':
+			$colorLeft = "teal";
+			$colorRight = "gold";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Colts
+		case '30':
+			$colorLeft = "white";
+			$colorRight = "blue";
 			break;
-		case '':
-			$colorLeft = "";
-			$colorRight = "";
+		//Titans
+		case '31':
+			$colorLeft = "#1F1B69";
+			$colorRight = "red";
 			break;
-			*/
+		//Bucaneers
+		case '32':
+			$colorLeft = "black";
+			$colorRight = "red";
+			break;
+		//Default
 		default:
 			$colorLeft = "blue";
 			$colorRight = "red";
 			break;
 	}
-	echo "style='border-left:50px solid " . $colorLeft . "; border-right:50px solid " . $colorRight . ";'";
+	echo "style='border-left:100px solid " . $colorLeft . "; border-right:100px solid " . $colorRight . "; background-color:gray;'";
 }
 ?>

@@ -62,7 +62,7 @@ getBorder();
 			<button type="submit" form="edit">Submit</button>
 		</form>
 	</div>
-	<div id="results" style="text-align: center">
+	<div id="results" style="text-align: center; background-color: white;">
 	<?php 
 
 	getData();

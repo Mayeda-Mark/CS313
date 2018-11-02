@@ -19,7 +19,7 @@
 		}
 
 		//Table headings
-		echo "<h1 style=\"text-align: left\">" . $teamName . "</h1><table border=\"1\"><tr>";
+		echo "<h1 style=\"text-align: left\">" . $teamName . "<img src='" . $teamName . ".jpg' width='100' height='100'></h1><table border=\"1\"><tr>";
 		echo "<th>Week</th>";
 		echo "<th>Score</th>";
 		echo "<th>Opponent Score</th>";
