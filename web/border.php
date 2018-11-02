@@ -7,15 +7,135 @@ function getBorder(){
 
 	$teamID = $_POST['Team1'];
 	switch ($teamID) {
-		case 'value':
-			# code...
+		case '1':
+			$colorLeft = "navy";
+			$colorRight = "red";
 			break;
-		
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
+		case '':
+			$colorLeft = "";
+			$colorRight = "";
+			break;
 		default:
 			$colorLeft = "blue";
 			$colorRight = "red";
 			break;
 	}
-	echo "style='border-left:20px solid " . $colorLeft . "; border-right:20px solid " . $colorRight . ";'";
+	echo "style='border-left:50px solid " . $colorLeft . "; border-right:50px solid " . $colorRight . ";'";
 }
 ?>
