@@ -17,4 +17,5 @@ function getBorder(){
 			break;
 	}
 	echo "style='border-left:20px solid " . $colorLeft . "; border-right:20px solid " . $colorRight . ";'";
+}
 ?>
