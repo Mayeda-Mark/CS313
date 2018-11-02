@@ -173,6 +173,6 @@ function getBorder(){
 			$colorRight = "red";
 			break;
 	}
-	echo "style='border-left:100px solid " . $colorLeft . "; border-right:100px solid " . $colorRight . "; background-color:gray;'";
+	echo "style='border-left:100px solid " . $colorLeft . "; border-right:100px solid " . $colorRight . "; background-color:#e0e0d1;'";
 }
 ?>
