@@ -6,7 +6,7 @@ require("dbConnect.php");
 require("getData.php");
 require("addData.php");
 require("teamSelect.php");
-require("border.php")
+require("border.php");
 $db = get_db();
 ?>
 <!DOCTYPE html>
