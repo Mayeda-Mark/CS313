@@ -94,7 +94,7 @@ function getBorder(){
 			break;
 		//Bengals
 		case '18':
-			$colorLeft = "orange";
+			$colorLeft = "#ef7d1a";
 			$colorRight = "black";
 			break;
 		//Ravens
@@ -173,6 +173,6 @@ function getBorder(){
 			$colorRight = "red";
 			break;
 	}
-	echo "style='border-left:100px solid " . $colorLeft . "; border-right:100px solid " . $colorRight . "; background-color:#e0e0d1;'";
+	echo "style='border-left:100px solid " . $colorLeft . "; border-right:100px solid " . $colorRight . "; background-color:#e0e0d1; margin: 5; height: 100%'";
 }
 ?>
