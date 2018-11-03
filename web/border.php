@@ -74,7 +74,7 @@ function getBorder(){
 			break;
 		//Broncos
 		case '14':
-			$colorLeft = "orange";
+			$colorLeft = "#ef7d1a";
 			$colorRight = "#1F1B69";
 			break;
 		//Rams
